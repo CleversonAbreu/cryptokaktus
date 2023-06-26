@@ -28,7 +28,7 @@ class ProfileController extends Controller
 
         $request->validate([
             'name'     => 'required',
-            'password' => 'required|min:8',
+            'password' => 'nullable|min:8',
             'phone'    => 'required',
             'mobile'   => 'required',
             'address'  => 'required',
@@ -40,7 +40,12 @@ class ProfileController extends Controller
         try {
             
             $user->name     = request('name');
-            $user->password = bcrypt(request('password'));
+
+            if (!empty(request('password'))) {
+                $user->password = bcrypt(request('password'));
+            }
+                
+
             $userUpdated    = $user->update();
             if ($userUpdated) {
                 if ($request->hasFile('image')) {
@@ -49,20 +54,26 @@ class ProfileController extends Controller
                     $fileName  = time().'.'.$extension;
                     $file->move($this->uploadPath, $fileName);
                     $finalPathName = $this->uploadPath.$fileName;
+                   
                   
                 }
                 if ($profile) {
                     $profile->phone   = request('phone');
                     $profile->mobile  = request('mobile');
                     $profile->address = request('address');
-                    $profile->image   = $finalPathName;
+                    if (isset($finalPathName)) {
+                        $profile->image   = $finalPathName;
+                    }
+                    
                     $profile->update();
                 } else {
                     $profile = new Profile();
                     $profile->phone    = request('phone');
                     $profile->mobile   = request('mobile');
                     $profile->address  = request('address');
-                    $profile->image    = $finalPathName;
+                    if (isset($finalPathName)) {
+                        $profile->image   = $finalPathName;
+                    }
                     $profile->users_id = $userId;
                     $profile->save();
 

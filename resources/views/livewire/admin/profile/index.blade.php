@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 <input class="text-muted mb-o border-0" type="password"
-                                                value="{{Auth::user()->password}}" name="password"
+                                                value="" name="password"
                                                 id="Password" require>
                                             </div>
                                         </div>
