@@ -88,9 +88,9 @@ class Index extends Component
 
         $total = $transactions[0]['purchase'] + $transactions[0]['sale'];
         $data2['label'][] = 'Purchase';
-        $data2['data'][] = number_format(($transactions[0]['purchase'] / $total) * 100, 2, '.', '');
+        $data2['data'][] = $transactions[0]['purchase'] == 0 ? 0 : number_format(($transactions[0]['purchase'] / $total) * 100, 2, '.', '');
         $data2['label'][] = 'Sale';
-        $data2['data'][] = number_format(($transactions[0]['sale'] / $total) * 100, 2, '.', '');
+        $data2['data'][] = $transactions[0]['sale'] == 0 ? 0 : number_format(($transactions[0]['sale'] / $total) * 100, 2, '.', '');
 
         $this->transactions = json_encode($data2);
     }

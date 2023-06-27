@@ -12,6 +12,6 @@ class CryptosTableSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Crypto::factory()->count(30)->create();
+        \App\Models\Crypto::factory()->count(120)->create();
     }
 }
