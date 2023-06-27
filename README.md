@@ -2,7 +2,8 @@
 # Cryptokaktus 
 
 Application created as an activity for the possibility of a vacancy as a laravel developer.
-
+- Page with video,images and infos https://kaktuscoder.com.br/cryptokaktus/
+  
 ## How to install
 
 - git clone https://github.com/CleversonAbreu/cryptokaktus.git
