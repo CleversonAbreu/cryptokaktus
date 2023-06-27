@@ -49,12 +49,3 @@ Application created as an activity for the possibility of a vacancy as a laravel
 * antonina98@example.org = password
 * judah91@example.org = password
 
-
-
-- visit http://172.173.189.29/
-- email :
-emedhurst@example.org
-joyce.dibbert@example.com
-antonina98@example.org
-judah91@example.org
-- password: password
