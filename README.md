@@ -1,3 +1,6 @@
+
+
+
 # Cryptokaktus 
 
 Application created as an activity for the possibility of a vacancy as a laravel developer.
@@ -19,9 +22,9 @@ Application created as an activity for the possibility of a vacancy as a laravel
 ## How to use online version
 
 - visit http://172.173.189.29/
--- email :
+- email :
 emedhurst@example.org
 joyce.dibbert@example.com
 antonina98@example.org
 judah91@example.org
--- password: password
+- password: password
