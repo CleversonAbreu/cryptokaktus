@@ -18,12 +18,4 @@ Application created as an activity for the possibility of a vacancy as a laravel
 - php artisan serve
 
 
-## How to use online version
-
-- visit http://172.173.189.29/
-- use email & password :
-* emedhurst@example.org = password
-* joyce.dibbert@example.com = password
-* antonina98@example.org = password
-* judah91@example.org = password
 
