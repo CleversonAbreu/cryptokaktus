@@ -1,0 +1,76 @@
+
+version: '3.8'
+
+services:
+
+  # Web Server Service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - app
+      - db
+    networks:
+      - backend
+
+  # Database Service
+  db:
+    image: mysql
+    container_name: mysql_db
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    ports:
+      - "33061:3306"
+    environment:
+      MYSQL_DATABASE: apidocker
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_INITDB_SKIP_TZINFO: 1
+      MYSQL_TIMEOUT: 28800  
+    restart: always
+    networks:
+      - backend
+
+  # Application Service
+  app:
+    container_name: apidocker
+    build: 
+      context: ./php
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "9000:9000"
+    working_dir: /var/www
+    networks:
+      - backend
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - backend
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+  # Define a network for the services to communicate
+networks:
+  backend:
+    driver: bridge
+
+

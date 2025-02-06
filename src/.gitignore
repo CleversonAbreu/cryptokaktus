@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+yarn-error.log*.sql         
+*.dump        
+*.mysql 
