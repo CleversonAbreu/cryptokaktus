@@ -19,3 +19,15 @@ Application created as an activity for the possibility of a vacancy as a laravel
 - php artisan db:seed --class=CryptosTableSeeder 
 - php artisan db:seed --class=TransactionTableSeeder 
 - http://localhost:8080/
+
+---
+ 
+<p align="center">
+  <img src="mg src="https://github.com/user-attachments/assets/38982e3f-6420-43c8-8957-cb1df2d68218" style="margin: 5px;" />
+  <br>
+  <img src="https://github.com/user-attachments/assets/0c6e41f2-1e4f-46b2-b845-fc4687f709a1" style="margin: 5px;" />
+    <br>
+  <img src="https://github.com/user-attachments/assets/7b9736b9-de6f-4ad9-91e0-35f6552ce1a9" style="margin: 5px;" />
+  <br>
+  <img src="https://github.com/user-attachments/assets/a2d999fa-1703-4d48-b9f2-c16fe8279b99" style="margin: 5px;" />
+</p>
